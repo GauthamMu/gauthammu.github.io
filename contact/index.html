@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="This is Gautham 
+		Mudunuru's Contact page.">
+		<meta name="author" content="Gautham">
+		<meta name="keywords" content="Gautham, Mudunuru, Gandeev,
+		Varma, Contact, Contact me"> 
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Gautham Mudunuru's Contact Page</title>
+		<link rel="stylesheet" href="https://gauthammu.github.io/style.css">
+		<link
+		rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+		/>
+		<link rel="stylesheet" href="https://gauthammu.github.io/countdown-timer/style.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="shortcut icon" href="https://gauthammu.github.io/GM.png" type="image/x-icon">
+		<style>
+			#ScrollToTop {
+				position: fixed;
+				right: 10px;
+				bottom: 10px;
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+				background: blue;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+				color: white;
+				border: none;
+				outline: none;
+				cursor: pointer;
+			}
+			#ScrollToTop:hover {
+				background: blueviolet;
+			}
+			#ScrollToTop:active {
+				background: blueviolet;
+			}
+		</style>
+	</head>
+	<body style="background-color: lightblue;">
+		<header style="background-color: white;">
+            <nav>
+                <div class="nav-center">
+                    <div class="nav-header">
+						<img src="https://gauthammu.github.io/GM.png" alt="" width="48px" height="48px" />
+                        <button class="nav-toggle">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                    <ul class="links">
+                        <li>
+                            <a href="https://gauthammu.github.io">Home</a>
+                        </li>
+                        <li>
+                            <a href="https://gauthammu.github.io/contact">Contact</a>
+                        </li>
+                        <li>
+                            <a href="https://gauthammu.github.io/tetris">Basic Tetris</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+		</header>
+		<main style="background-color: lightblue; padding-left: 10px; padding-right: 10px;">
+			<br>
+			<div class="nav-center">
+				<h1>Contact</h1>
+			</div>
+			<button id="ScrollToTop">
+				<i class="material-icons">
+					arrow_upward
+				</i>
+			</button>
+			<form
+			action="https://formspree.io/f/xknyrybb"
+			method="POST"
+			>	
+				<input spellcheck="false" autocorrect="off" type="name" name="name" placeholder="Your Name" required>
+				<br>
+				<br>
+				<input spellcheck="false" autocorrect="off" type="email" name="email" placeholder="Your E-Mail">
+				<br>
+				<br>
+				<textarea spellcheck="false" name="message" placeholder="Your Message" autocorrect="off" feedback rows="5" cols="28"></textarea>
+				<br>
+				<br>
+				<button type="submit">Send</button>
+				<p style="width: 75%;"><b>Clicking on Send will lead you to Formspree,
+				a service I am using to actually recieve the feedback.</b>
+				</p>
+			</form> 
+			<form action="mailto:gmudunuru@gmail.com">
+				<p style="width: 75%;">Alternatively, you can use the button below, to send me a mail directly.<sup>[1]</sup></p>
+				<p style="width: 75%;"><small>[1]The button below may not work if you haven't set an E-Mail application as favourite or if the E-Mail service is browser-only.</small></p>
+				<button type="submit">Mail me directly</button>
+			</form>
+		</main>
+		<footer style="padding-left: 10px; padding-right: 10px;">
+			<hr/>
+			<p><small>
+			Gautham Mudunuru
+			<br/>
+			<a href="https://www.google.com/maps/place/Farman-Strasse+63,+8152+Opfikon/@47.4227851,8.5647868,17z/data=!3m1!4b1!4m5!3m4!1s0x479aa073421729ab:0xf6609c03cbc078ba!8m2!3d47.4227851!4d8.5647868" target="_blank">
+			Farman-Strasse 63
+			<br/>
+			CH-8152 Opfikon</a>
+			<br/><a href="mailto:gmudunuru@gmail.com" id="email"></a><br><a href="tel:+41788156322" id="phone"></a><br><br>&copy; 2022 Gautham Mudunuru</small></p>
+			<script src="https://gauthammu.github.io/app.js"></script>
+			<script src="https://gauthammu.github.io/countdown-timer/script.js"></script>
+			<script>
+				const ScrollToTop = document.querySelector("#ScrollToTop");
+				ScrollToTop.addEventListener("click", function () {
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: "smooth"
+					})
+				})
+			</script>
+		</footer>
+	</body>
+</html>

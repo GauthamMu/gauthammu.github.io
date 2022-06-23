@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="This is the Tetris page of
+		Gautham Mudunuru.">
+		<meta name="author" content="Gautham">
+		<meta name="keywords" content="Gautham, Mudunuru, Gandeev,
+		Varma, Homepage">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://gauthammu.github.io/style.css"></link>
+		<link
+		rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+		></link>
+        <link rel="stylesheet" href="https://gauthammu.github.io/countdown-timer/style.css">
+        <title>Gautham Mudunuru's Basic Tetris</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+        <link rel="shortcut icon" href="https://gauthammu.github.io/GM.png" type="image/x-icon">
+		<style>
+			#ScrollToTop {
+				position: fixed;
+				right: 10px;
+				bottom: 10px;
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+				background: blue;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+				color: white;
+				border: none;
+				outline: none;
+				cursor: pointer;
+			}
+			#ScrollToTop:hover {
+				background: blueviolet;
+			}
+			#ScrollToTop:active {
+				background: blueviolet;
+			}
+			#ScrollToGame {
+				position: fixed;
+				right: 10px;
+				bottom: 80px;
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+				background: blue;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+				color: white;
+				border: none;
+				outline: none;
+				cursor: pointer;
+			}
+			#ScrollToGame:hover {
+				background: blueviolet;
+			}
+			#ScrollToGame:active {
+				background: blueviolet;
+			}
+		</style>
+    </head>
+    <body style="background-color: lightblue;">
+        <header style="background-color: white;">
+            <nav>
+                <div class="nav-center">
+                    <div class="nav-header">
+						<img src="https://gauthammu.github.io/GM.png" alt="" width="48px" height="48px" />
+                        <button class="nav-toggle">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                    <ul class="links">
+                        <li>
+                            <a href="https://gauthammu.github.io">Home</a>
+                        </li>
+                        <li>
+                            <a href="https://gauthammu.github.io/contact">Contact</a>
+                        </li>
+                        <li>
+                            <a href="https://gauthammu.github.io/tetris">Basic Tetris</a>
+                        </li>
+                        <!--<li>
+                            <a href="https://gauthammu.github.io/tetris/mobile">Basic Tetris Mobile</a>
+                        </li>-->
+                    </ul>
+                </div>
+			</nav>
+        </header>
+        <main style="background-color: lightblue; padding-left: 10px; padding-right: 10px;">
+            <br>
+            <br>
+            <aside>
+                <!--<b>Hello World</b>-->
+            </aside>
+            <div class="nav-center">
+                <h1>Basic Tetris</h1>
+            </div>
+            <a href="#game">
+                <button id="ScrollToGame">
+                    <i class="material-icons-outlined">
+                        videogame_asset
+                    </i>
+                </button>
+            </a>
+            <button id="ScrollToTop">
+				<i class="material-icons">
+					arrow_upward
+				</i>
+			</button>
+            <p style="width: 75%;">Hello and welcome to my basic Tetris game, 
+                which I programmed myself. (Well, actually, I used a <a href="https://youtu.be/rAUn1Lom6dw">Tutorial</a>.)
+            </p>
+            <p style="width: 75%;">
+            Like I said, this version of Tetris is very 
+                simple, but it still has colours, a few keyboard controls and more.
+                The controls are very simple, but they are still listed below.
+                The Tetrominoes are controlled using the arrow, WASD, keypad or IJKL keys (just in case you are 
+                left-handed and your arrow keys are as small as mine). Rotating the Tetromino left happens by pressing M, Q or U. <!--There is also a mobile Version of the Game, <a href="https://gauthammu.github.io/tetris/mobile">which is avalible through this link.</a> That is all you need to know. Enjoy!--> <br>
+                <b>Warning: There is a Software bug, which, when you resume the game,
+                    resets the next Tetromino and selects a new one. In addition, you cannot restart 
+                    the game by pressing the restart button, unless you reload the tab. If you find a way to fix it, please don't hesitate to contact me via <a href="mailto:gmudunuru@gmail.com">mail</a>.
+                </b>
+            </p>
+            <table>
+                <caption style="font-weight: bold; font-size: large;">Key Functions</caption>
+                <tr>
+                    <th>Key</th>
+                    <th>Function</th>
+                </tr>
+                <tr>
+                    <td>Esc(ape)/ 7</td>
+                    <td>Play/ pause</td>
+                </tr>
+                <tr>
+                    <td>M/ Q/ U</td>
+                    <td>Rotate left</td>
+                </tr>
+                <tr id="game">
+                    <td>Upper arrow/ W/ I/ 8</td>
+                    <td>Rotate right</td>
+                </tr>
+                <tr>
+                    <td>Left arrow/ A/ J/ 4</td>
+                    <td>Move left</td>
+                </tr>
+                <tr>
+                    <td>Lower arrow/ S/ K/ 5</td>
+                    <td>Drop</td>
+                </tr>
+                <tr>
+                    <td>Right arrow/ D/ L/ 6</td>
+                    <td>Move right</td>
+                </tr>
+            </table>
+            <h2 id="scoreDisplay"></h2>
+            <h3>Score:<span id="score">0</span></h3>
+            <button id="start-button">Start(Esc)</button>
+            <div class="container">
+                <div class="grid">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div class="taken"></div>
+                    <div class="taken"></div>
+                    <div class="taken"></div>
+                    <div class="taken"></div>
+                    <div class="taken"></div>
+                    <div class="taken"></div>
+                    <div class="taken"></div>
+                    <div class="taken"></div>
+                    <div class="taken"></div>
+                    <div class="taken"></div>
+                </div>
+
+
+                <div class="mini-grid">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </main>
+        <footer style="padding-left: 10px; padding-right: 10px;">
+            <hr />
+			<p><small>
+			Gautham Mudunuru
+			<br />
+			<a href="https://www.google.com/maps/place/Farman-Strasse+63,+8152+Opfikon/@47.4227851,8.5647868,17z/data=!3m1!4b1!4m5!3m4!1s0x479aa073421729ab:0xf6609c03cbc078ba!8m2!3d47.4227851!4d8.5647868"
+			target="_blank">
+			Farman-Strasse 63
+			<br />
+			CH-8152 Opfikon</a>
+   			<br /><a href="mailto:gmudunuru@gmail.com" id="email"></a><br><a href="tel:+41788156322" id="phone"></a><br><br>&copy; 2022 Gautham Mudunuru</small></p>
+            <script src="https://gauthammu.github.io/app.js"></script>
+            <script src="https://gautham.github.io/countdown-timer/script.js"></script>
+            <script>
+				const ScrollToTop = document.querySelector("#ScrollToTop");
+				ScrollToTop.addEventListener("click", function () {
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: "smooth"
+					})
+				})
+			</script>
+        </footer>
+    </body>
+</html>
