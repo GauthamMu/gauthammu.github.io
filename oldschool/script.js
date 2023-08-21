@@ -22,7 +22,7 @@ function songText() {
 		songTP.innerHTML = songTP.innerHTML + "<br/><br/>Yakhi Raju they ain't ready for this one<br/>I'm also not ready";
 	}
 	else if (songVar == 3) {
-		songTP.innerHTML = songTP.innerHTML + "<br/>Let's show it how it's done<br/>You show<br/>Ay so lets go";
+		songTP.innerHTML = songTP.innerHTML + "<br/>Let's show em how it's done<br/>You show<br/>Ay so lets go";
 	}
 	else if (songVar == 4) {
 		songTP.innerHTML = songTP.innerHTML + "<br/><br/>Smoke shisha play FIFA<br/>Everyday";
