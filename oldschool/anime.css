@@ -1,0 +1,157 @@
+.animationGM {
+	position: relative;
+	background-color: black;
+	width: 800px;
+	height: 200px;
+}
+.animationGM > div {
+	position: absolute;
+	background-color: none;
+	color: white;
+	width: 100px;
+	height: 100px;
+	top: 50px;
+}
+.animationGM > div > p {
+	font-size: 85px;
+	margin: 0px;
+
+}
+.letterA > p, .letterU > p, .letterT > p, .letterH > p, .letterA2 > p, .letterM > p {
+	animation-name: panime;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: ease-out;
+}
+.letterG {
+	left: 50px;
+	animation-name: letterGanime;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: ease-in-out;
+	z-index: 999;
+}
+.letterA {
+	left: 150px;
+	animation-name: letterAanime;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: ease-in-out;
+}
+.letterU {
+	left: 250px;
+	animation-name: letterUanime;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: ease-in-out;
+}
+.letterT {
+	left: 350px;
+	animation-name: letterTanime;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: ease-in-out;
+}
+.letterH {
+	left: 450px;
+	animation-name: letterHanime;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: ease-in-out;
+}
+.letterA2 {
+	left: 550px;
+	animation-name: letterA2anime;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: ease-in-out;
+}
+.letterM {
+	left: 650px;
+	animation-name: letterManime;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: ease-in-out;
+}
+@keyframes letterGanime {
+	from {
+		left: 50px;
+	}
+	to {
+		left: 350px;
+	}
+}
+@keyframes letterAanime {
+	from {
+		left: 150px;
+	}
+	to {
+		left: 0px;
+	}
+}
+@keyframes letterUanime {
+	from {
+		left: 250px;
+	}
+	to {
+		left: 0px;
+	}
+}
+@keyframes letterTanime {
+	from {
+		left: 350px;
+	}
+	to {
+		left: 25px;
+	}
+}
+@keyframes letterHanime {
+	from {
+		left: 450px;
+	}
+	to {
+		left: 75px;
+	}
+}
+@keyframes letterA2anime {
+	from {
+		left: 550px;
+	}
+	to {
+		left: 125px;
+	}
+}
+@keyframes letterManime {
+	from {
+		left: 650px;
+	}
+	to {
+		left: 175px;
+	}
+}
+@keyframes panime {
+	from {
+		color: white;
+	}
+	75% {
+		color: black;
+	}
+	to {
+		color: black;
+	}
+}
+.clicker {
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	border-radius: 50%;
+	font-weight: bold;
+}
