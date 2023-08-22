@@ -1,9 +1,3 @@
-function calculator() {
-	document.getElementById("calculator").innerHTML = '<iframe src="https://www.numworks.com/simulator/embed/" width="368px" height="720px"></iframe><script src="https://www.numworks.com/simulator/embed.js"></script>';
-}
-function stopCalculator() {
-	document.getElementById("calculator").innerHTML = "";
-}
 clickCountNum = 0;
 function clickCounter() {
 	clickCountNum = clickCountNum + 1;
