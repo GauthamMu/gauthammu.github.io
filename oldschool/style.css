@@ -63,3 +63,9 @@ body {
 ul {
 	margin: 8px 0px;
 }
+a {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
