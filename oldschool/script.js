@@ -1,7 +1,22 @@
 clickCountNum = 0;
 function clickCounter() {
 	clickCountNum = clickCountNum + 1;
-	document.getElementById("clickCount").innerHTML = "You have clicked " + clickCountNum + " time(s).";
+	if (clickCountNum == 1) {
+		document.getElementById("clickCount").innerHTML = "You have clicked " + clickCountNum + " time.";
+	}
+	else {
+		document.getElementById("clickCount").innerHTML = "You have clicked " + clickCountNum + " times.";
+	}
+}
+clickCountNum2 = 0;
+function clickCounter2() {
+	clickCountNum2 = clickCountNum2 + 1;
+	if (clickCountNum2 == 1) {
+		document.getElementById("clickCount2").innerHTML = "W was pressed " + clickCountNum2 + " time.";
+	}
+	else {
+		document.getElementById("clickCount2").innerHTML = "W was pressed " + clickCountNum2 + " times.";
+	}
 }
 songTP = document.getElementById("songTextP");
 songVar = 0;
@@ -217,4 +232,26 @@ function songText() {
 	height = document.body.scrollHeight;
     window.scroll(0 , height);
 	songVar = songVar + 1;
+}
+window.onkeydown = function(event) {
+   if (event.key == "ArrowUp") {
+	   if (event.repeat == false) {
+		   clickCounter();
+	   }
+   }
+   if (event.key == " ") {
+	   if (event.repeat == false) {
+		   clickCounter();
+	   }
+   }
+   if (event.key == "w") {
+	   if (event.repeat == false) {
+		   clickCounter2();
+	   }
+   }
+   if (event.key == "Enter") {
+	   if (event.repeat == false) {
+		   songText();
+	   }
+   }
 }
