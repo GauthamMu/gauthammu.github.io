@@ -1,11 +1,55 @@
 clickCountNum = 0;
+clickCountNumSpace = 0;
+clickCountNumUpArrow = 0;
 function clickCounter() {
 	clickCountNum = clickCountNum + 1;
 	if (clickCountNum == 1) {
-		document.getElementById("clickCount").innerHTML = "You have clicked " + clickCountNum + " time.";
+		if (clickCountNumSpace == 0) {
+			if (clickCountNumUpArrow == 0) {
+				document.getElementById("clickCount").innerHTML = "You have clicked 1 time.";
+			}
+			else {
+				document.getElementById("clickCount").innerHTML = "You have clicked 1 time (1 time with the Up Arrow)";
+			}
+		}
+		else {
+			document.getElementById("clickCount").innerHTML = "You have clicked 1 time (1 time with the Space Bar)";
+		}
 	}
 	else {
-		document.getElementById("clickCount").innerHTML = "You have clicked " + clickCountNum + " times.";
+		if (clickCountNumSpace == 0) {
+			if (clickCountNumUpArrow == 0) {
+				document.getElementById("clickCount").innerHTML = "You have clicked " + clickCountNum + " times.";
+			}
+			else if (clickCountNumUpArrow == 1) {
+				document.getElementById("clickCount").innerHTML = "You have clicked " + clickCountNum + " times (1 time with the Up Arrow)";
+			}
+			else {
+				document.getElementById("clickCount").innerHTML = "You have clicked " + clickCountNum + " times (" + clickCountNumUpArrow + " times with the Up Arrow)";
+			}
+		}
+		else if (clickCountNumSpace == 1) {
+			if (clickCountNumUpArrow == 0) {
+				document.getElementById("clickCount").innerHTML = "You have clicked " + clickCountNum + " times (1 time with the Space Bar)";
+			}
+			else if (clickCountNumUpArrow == 1) {
+				document.getElementById("clickCount").innerHTML = "You have clicked " + clickCountNum + " times (1 time with the Space Bar, 1 time with the Up Arrow)";
+			}
+			else {
+				document.getElementById("clickCount").innerHTML = "You have clicked " + clickCountNum + " times (1 time with the Space Bar, " + clickCountNumUpArrow + " times with the Up Arrow)";
+			}
+		}
+		else {
+			if (clickCountNumUpArrow == 0) {
+				document.getElementById("clickCount").innerHTML = "You have clicked " + clickCountNum + " times (" + clickCountNumSpace + " times with the Space Bar)";
+			}
+			else if (clickCountNumUpArrow == 0) {
+				document.getElementById("clickCount").innerHTML = "You have clicked " + clickCountNum + " times (" + clickCountNumSpace + " times with the Space Bar, 1 time with the Up Arrow)";
+			}
+			else {
+				document.getElementById("clickCount").innerHTML = "You have clicked " + clickCountNum + " times (" + clickCountNumSpace + " times with the Space Bar, " + clickCountNumUpArrow + " times with the Up Arrow)";
+			}
+		}
 	}
 }
 clickCountNum2 = 0;
@@ -17,6 +61,15 @@ function clickCounter2() {
 	else {
 		document.getElementById("clickCount2").innerHTML = "W was pressed " + clickCountNum2 + " times.";
 	}
+}
+function clickReset() {
+	clickCountNum = 0;
+	clickCountNumSpace = 0;
+	clickCountNumUpArrow = 0;
+	clickCountNum2 = 0;
+	clickCountNum2W = 0;
+	document.getElementById("clickCount").innerHTML = "";
+	document.getElementById("clickCount2").innerHTML = "";
 }
 songTP = document.getElementById("songTextP");
 songVar = 0;
@@ -236,17 +289,26 @@ function songText() {
 window.onkeydown = function(event) {
    if (event.key == "ArrowUp") {
 	   if (event.repeat == false) {
+		   clickCountNumUpArrow = clickCountNumUpArrow + 1;
 		   clickCounter();
 	   }
    }
    if (event.key == " ") {
 	   if (event.repeat == false) {
+		   document.getElementById("clicker").blur();
+		   document.getElementById("clicker2").blur();
+		   clickCountNumSpace = clickCountNumSpace + 1;
 		   clickCounter();
 	   }
    }
    if (event.key == "w") {
 	   if (event.repeat == false) {
 		   clickCounter2();
+	   }
+   }
+   if (event.key == "Backspace") {
+	   if (event.repeat == false) {
+		   clickReset();
 	   }
    }
    if (event.key == "Enter") {
