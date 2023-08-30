@@ -2,52 +2,55 @@ clickCountNum = 0;
 clickCountNumSpace = 0;
 clickCountNumUpArrow = 0;
 function clickCounter() {
-	clickCountNum = clickCountNum + 1;
-	if (clickCountNum == 1) {
-		if (clickCountNumSpace == 0) {
-			if (clickCountNumUpArrow == 0) {
-				document.getElementById("clickCount").innerHTML = "You have clicked 1 time.";
+	if (clickAllowed == true) {
+		console.log("cA is true");
+		clickCountNum = clickCountNum + 1;
+		if (clickCountNum == 1) {
+			if (clickCountNumSpace == 0) {
+				if (clickCountNumUpArrow == 0) {
+					document.getElementById("clickCount").innerHTML = "You have clicked 1 time.";
+				}
+				else {
+					document.getElementById("clickCount").innerHTML = "You have clicked 1 time (1 time with the Up Arrow)";
+				}
 			}
 			else {
-				document.getElementById("clickCount").innerHTML = "You have clicked 1 time (1 time with the Up Arrow)";
+				document.getElementById("clickCount").innerHTML = "You have clicked 1 time (1 time with the Space Bar)";
 			}
 		}
 		else {
-			document.getElementById("clickCount").innerHTML = "You have clicked 1 time (1 time with the Space Bar)";
-		}
-	}
-	else {
-		if (clickCountNumSpace == 0) {
-			if (clickCountNumUpArrow == 0) {
-				document.getElementById("clickCount").innerHTML = "You have clicked " + clickCountNum + " times.";
+			if (clickCountNumSpace == 0) {
+				if (clickCountNumUpArrow == 0) {
+					document.getElementById("clickCount").innerHTML = "You have clicked " + clickCountNum + " times.";
+				}
+				else if (clickCountNumUpArrow == 1) {
+					document.getElementById("clickCount").innerHTML = "You have clicked " + clickCountNum + " times (1 time with the Up Arrow)";
+				}
+				else {
+					document.getElementById("clickCount").innerHTML = "You have clicked " + clickCountNum + " times (" + clickCountNumUpArrow + " times with the Up Arrow)";
+				}
 			}
-			else if (clickCountNumUpArrow == 1) {
-				document.getElementById("clickCount").innerHTML = "You have clicked " + clickCountNum + " times (1 time with the Up Arrow)";
-			}
-			else {
-				document.getElementById("clickCount").innerHTML = "You have clicked " + clickCountNum + " times (" + clickCountNumUpArrow + " times with the Up Arrow)";
-			}
-		}
-		else if (clickCountNumSpace == 1) {
-			if (clickCountNumUpArrow == 0) {
-				document.getElementById("clickCount").innerHTML = "You have clicked " + clickCountNum + " times (1 time with the Space Bar)";
-			}
-			else if (clickCountNumUpArrow == 1) {
-				document.getElementById("clickCount").innerHTML = "You have clicked " + clickCountNum + " times (1 time with the Space Bar, 1 time with the Up Arrow)";
-			}
-			else {
-				document.getElementById("clickCount").innerHTML = "You have clicked " + clickCountNum + " times (1 time with the Space Bar, " + clickCountNumUpArrow + " times with the Up Arrow)";
-			}
-		}
-		else {
-			if (clickCountNumUpArrow == 0) {
-				document.getElementById("clickCount").innerHTML = "You have clicked " + clickCountNum + " times (" + clickCountNumSpace + " times with the Space Bar)";
-			}
-			else if (clickCountNumUpArrow == 0) {
-				document.getElementById("clickCount").innerHTML = "You have clicked " + clickCountNum + " times (" + clickCountNumSpace + " times with the Space Bar, 1 time with the Up Arrow)";
+			else if (clickCountNumSpace == 1) {
+				if (clickCountNumUpArrow == 0) {
+					document.getElementById("clickCount").innerHTML = "You have clicked " + clickCountNum + " times (1 time with the Space Bar)";
+				}
+				else if (clickCountNumUpArrow == 1) {
+					document.getElementById("clickCount").innerHTML = "You have clicked " + clickCountNum + " times (1 time with the Space Bar, 1 time with the Up Arrow)";
+				}
+				else {
+					document.getElementById("clickCount").innerHTML = "You have clicked " + clickCountNum + " times (1 time with the Space Bar, " + clickCountNumUpArrow + " times with the Up Arrow)";
+				}
 			}
 			else {
-				document.getElementById("clickCount").innerHTML = "You have clicked " + clickCountNum + " times (" + clickCountNumSpace + " times with the Space Bar, " + clickCountNumUpArrow + " times with the Up Arrow)";
+				if (clickCountNumUpArrow == 0) {
+					document.getElementById("clickCount").innerHTML = "You have clicked " + clickCountNum + " times (" + clickCountNumSpace + " times with the Space Bar)";
+				}
+				else if (clickCountNumUpArrow == 0) {
+					document.getElementById("clickCount").innerHTML = "You have clicked " + clickCountNum + " times (" + clickCountNumSpace + " times with the Space Bar, 1 time with the Up Arrow)";
+				}
+				else {
+					document.getElementById("clickCount").innerHTML = "You have clicked " + clickCountNum + " times (" + clickCountNumSpace + " times with the Space Bar, " + clickCountNumUpArrow + " times with the Up Arrow)";
+				}
 			}
 		}
 	}
@@ -55,36 +58,44 @@ function clickCounter() {
 clickCountNum2 = 0;
 clickCountNum2W = 0;
 function clickCounter2() {
-	clickCountNum2 = clickCountNum2 + 1;
-	clickCountNum2Button = clickCountNum2 - clickCountNum2W;
-	if (clickCountNum2 == 1) {
-		if (clickCountNum2Button == 0) {
-			document.getElementById("clickCount2").innerHTML = "W was pressed 1 time.";
-		}
-		else if (clickCountNum2Button == 1) {
-			document.getElementById("clickCount2").innerHTML = "W was pressed 1 time (1 time with the button)";
-		}
-	}
-	else {
-		if (clickCountNum2Button == 0) {
-			document.getElementById("clickCount2").innerHTML = "W was pressed " + clickCountNum2 + " times.";
-		}
-		else if (clickCountNum2Button == 1) {
-			document.getElementById("clickCount2").innerHTML = "W was pressed " + clickCountNum2 + " times (1 time with the button)";
+	if (clickAllowed == true) {
+		clickCountNum2 = clickCountNum2 + 1;
+		clickCountNum2Button = clickCountNum2 - clickCountNum2W;
+		if (clickCountNum2 == 1) {
+			if (clickCountNum2Button == 0) {
+				document.getElementById("clickCount2").innerHTML = "W was pressed 1 time.";
+			}
+			else if (clickCountNum2Button == 1) {
+				document.getElementById("clickCount2").innerHTML = "W was pressed 1 time (1 time with the button)";
+			}
 		}
 		else {
-			document.getElementById("clickCount2").innerHTML = "W was pressed " + clickCountNum2 + " times (" + clickCountNum2Button + " times with the button)";
+			if (clickCountNum2Button == 0) {
+				document.getElementById("clickCount2").innerHTML = "W was pressed " + clickCountNum2 + " times.";
+			}
+			else if (clickCountNum2Button == 1) {
+				document.getElementById("clickCount2").innerHTML = "W was pressed " + clickCountNum2 + " times (1 time with the button)";
+			}
+			else {
+				document.getElementById("clickCount2").innerHTML = "W was pressed " + clickCountNum2 + " times (" + clickCountNum2Button + " times with the button)";
+			}
 		}
 	}
 }
 function clickReset() {
-	clickCountNum = 0;
-	clickCountNumSpace = 0;
-	clickCountNumUpArrow = 0;
-	clickCountNum2 = 0;
-	clickCountNum2W = 0;
-	document.getElementById("clickCount").innerHTML = "";
-	document.getElementById("clickCount2").innerHTML = "";
+	if (clickAllowed == false) {
+		clickCountNum = 0;
+		clickCountNumSpace = 0;
+		clickCountNumUpArrow = 0;
+		clickCountNum2 = 0;
+		clickCountNum2W = 0;
+		document.getElementById("clickCount").innerHTML = "";
+		document.getElementById("clickCount2").innerHTML = "";
+		TimeV = 0;
+		TimeVC = 0;
+		clickAllowed = true;
+		intervalId = setInterval(Time, 99);
+	}
 }
 songTP = document.getElementById("songTextP");
 songVar = 0;
@@ -335,25 +346,18 @@ window.onkeydown = function(event) {
 }
 TimeV = 0;
 TimeVC = 0;
-TimeVM = 0;
-setInterval(Time, 99)
+clickAllowed = true;
+intervalId = setInterval(Time, 99);
 function Time() {
 	TimeVC = TimeVC + 1;
 	if (TimeVC == 10) {
 		TimeVC = 0;
 		TimeV = TimeV + 1;
 	}
-	if (TimeV == 60) {
-		TimeV = 0;
-		TimeVM = TimeVM + 1;
-	}
-	if (TimeVM == 0) {
-		document.getElementById("time").innerHTML = TimeV + "." + TimeVC;
-	}
-	else if (TimeVM == 1){
-		document.getElementById("time").innerHTML = "1 min, " + TimeV + "." + TimeVC;
-	}
-	else {
-		document.getElementById("time").innerHTML = TimeVM + " mins, " + TimeV + "." + TimeVC;
+	document.getElementById("time").innerHTML = TimeV + "." + TimeVC;
+	if (TimeV == 10) {
+		document.getElementById("time").innerHTML = "Stop";
+		clearInterval(intervalId);
+		clickAllowed = false;
 	}
 }
