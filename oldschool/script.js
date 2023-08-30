@@ -333,3 +333,27 @@ window.onkeydown = function(event) {
 	   }
    }
 }
+TimeV = 0;
+TimeVC = 0;
+TimeVM = 0;
+setInterval(Time, 99)
+function Time() {
+	TimeVC = TimeVC + 1;
+	if (TimeVC == 10) {
+		TimeVC = 0;
+		TimeV = TimeV + 1;
+	}
+	if (TimeV == 60) {
+		TimeV = 0;
+		TimeVM = TimeVM + 1;
+	}
+	if (TimeVM == 0) {
+		document.getElementById("time").innerHTML = TimeV + "." + TimeVC;
+	}
+	else if (TimeVM == 1){
+		document.getElementById("time").innerHTML = "1 min, " + TimeV + "." + TimeVC;
+	}
+	else {
+		document.getElementById("time").innerHTML = TimeVM + " mins, " + TimeV + "." + TimeVC;
+	}
+}
