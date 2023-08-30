@@ -53,13 +53,28 @@ function clickCounter() {
 	}
 }
 clickCountNum2 = 0;
+clickCountNum2W = 0;
 function clickCounter2() {
 	clickCountNum2 = clickCountNum2 + 1;
+	clickCountNum2Button = clickCountNum2 - clickCountNum2W;
 	if (clickCountNum2 == 1) {
-		document.getElementById("clickCount2").innerHTML = "W was pressed " + clickCountNum2 + " time.";
+		if (clickCountNum2Button == 0) {
+			document.getElementById("clickCount2").innerHTML = "W was pressed 1 time.";
+		}
+		else if (clickCountNum2Button == 1) {
+			document.getElementById("clickCount2").innerHTML = "W was pressed 1 time (1 time with the button)";
+		}
 	}
 	else {
-		document.getElementById("clickCount2").innerHTML = "W was pressed " + clickCountNum2 + " times.";
+		if (clickCountNum2Button == 0) {
+			document.getElementById("clickCount2").innerHTML = "W was pressed " + clickCountNum2 + " times.";
+		}
+		else if (clickCountNum2Button == 1) {
+			document.getElementById("clickCount2").innerHTML = "W was pressed " + clickCountNum2 + " times (1 time with the button)";
+		}
+		else {
+			document.getElementById("clickCount2").innerHTML = "W was pressed " + clickCountNum2 + " times (" + clickCountNum2Button + " times with the button)";
+		}
 	}
 }
 function clickReset() {
@@ -303,6 +318,7 @@ window.onkeydown = function(event) {
    }
    if (event.key == "w") {
 	   if (event.repeat == false) {
+		   clickCountNum2W = clickCountNum2W + 1;
 		   clickCounter2();
 	   }
    }
