@@ -3,7 +3,6 @@ clickCountNumSpace = 0;
 clickCountNumUpArrow = 0;
 function clickCounter() {
 	if (clickAllowed == true) {
-		console.log("cA is true");
 		clickCountNum = clickCountNum + 1;
 		if (clickCountNum == 1) {
 			if (clickCountNumSpace == 0) {
@@ -96,26 +95,6 @@ function clickReset() {
 		clickAllowed = true;
 		intervalId = setInterval(Time, 99);
 	}
-}
-function Test() {
-	for (var i = 0; i < 69; i++) { 
-		document.getElementById('clicker').click()
-	}
-}
-function Test2() {
-	for (var i = 0; i < 69; i++) { 
-		document.getElementById('clicker2').click()
-	}
-}
-function removelS() {
-	localStorage.removeItem('best');
-	localStorage.removeItem('best2');
-	localStorage.removeItem('name');
-	document.getElementById("best").innerHTML = "";
-	document.getElementById("best2").innerHTML = "";
-	delete best;
-	delete best2;
-	delete name;
 }
 songTP = document.getElementById("songTextP");
 songVar = 0;
@@ -368,17 +347,6 @@ TimeV = 0;
 TimeVC = 0;
 clickAllowed = true;
 intervalId = setInterval(Time, 99);
-best = 0;
-if (localStorage.getItem('best') != null) {
-	best = localStorage.getItem('best');
-	document.getElementById("best").innerHTML = "You have clicked " + best + " times in 10 seconds (best)";
-}
-if (localStorage.getItem('best2') != null) {
-	best2 = localStorage.getItem('best2');
-	name = localStorage.getItem('name');
-	document.getElementById("best2").innerHTML = name + " has pressed W " + best2 + " times in 10 seconds (best player 2)";
-}
-best2 = 0;
 function Time() {
 	TimeVC = TimeVC + 1;
 	if (TimeVC == 10) {
@@ -390,20 +358,5 @@ function Time() {
 		document.getElementById("time").innerHTML = "Stop";
 		clearInterval(intervalId);
 		clickAllowed = false;
-		if (clickCountNum > best) {
-			best = clickCountNum
-			document.getElementById("best").innerHTML = "You have clicked " + best + " times in 10 seconds (best)";
-			localStorage.setItem("best", best);
-		}
-		if (clickCountNum2 > best2) {
-			best2 = clickCountNum2
-			namenew = prompt("You are the fastest player 2. What is your name?");
-			if (namenew != null) {
-				name = namenew;
-			}
-			document.getElementById("best2").innerHTML = name + " has pressed W " + best2 + " times in 10 seconds (best player 2)";
-			localStorage.setItem("best2", best2);
-			localStorage.setItem("name", name);
-		}
 	}
 }
