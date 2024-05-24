@@ -1,0 +1,15 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    grid-auto-columns: min-content;
+    grid-template-rows: none;
+    grid-auto-rows: min-content;
+}
+
+.grid-item {
+    width: 300px;
+}
+
+.grid-item-img {
+    width: 100%;
+}
